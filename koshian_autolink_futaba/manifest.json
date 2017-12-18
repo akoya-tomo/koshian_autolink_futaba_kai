@@ -1,9 +1,9 @@
 {
     "manifest_version":2,
 
-    "name":"KOSHIAN 自動リンク生成",
+    "name":"KOSHIAN 自動リンク生成 改",
 
-    "version":"1.4.3",
+    "version":"1.0.0",
 
     "description":"URLや塩のファイル名からリンクを作成します",
 
@@ -26,7 +26,7 @@
 
     "applications":{
         "gecko":{
-            "id":"{be984dc0-5475-461f-9241-f3d192eff0a8}"
+            "id":"{9519A0BA-E3D3-11E7-87D8-F1731843E317}"
         }
     }
 }
