@@ -8,10 +8,12 @@
 オプションを有効にすればオリジナル版と同じ動作になります  
 
 ## インストール
-[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.0.0/koshian_autolink_futaba_kai-1.0.0-an.fx.xpi)
+[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.0.1/koshian_autolink_futaba_kai-1.0.1-an.fx.xpi)
 
 ## 更新履歴
 
+* v1.0.1 2017-12-18
+  - typo修正
 * v1.0.0 2017-12-18
   - KOSHIAN 自動リンク生成 v1.4.3ベース
   - 「引用された塩のファイル名のリンクを作成する」オプションを追加
