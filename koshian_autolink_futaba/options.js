@@ -18,7 +18,7 @@ function saveOptions(e) {
     max_width: document.querySelector("#max_width").value,
     max_height: document.querySelector("#max_height").value,
     volume: document.querySelector("#volume").value,
-    sio_quate_link: document.querySelector("#sio_quate_link").checked,
+    sio_quote_link: document.querySelector("#sio_quote_link").checked,
   });
 }
 
@@ -31,7 +31,7 @@ function setCurrentChoice(result) {
   document.querySelector("#max_width").value = safeGetValue(result.max_width, 500);
   document.querySelector("#max_height").value = safeGetValue(result.max_height, 500);
   document.querySelector("#volume").value = safeGetValue(result.volume, 0.5);
-  document.querySelector("#sio_quate_link").checked = safeGetValue(result.sio_quate_link, false);
+  document.querySelector("#sio_quote_link").checked = safeGetValue(result.sio_quote_link, false);
 }
 
 function onError(error) {
