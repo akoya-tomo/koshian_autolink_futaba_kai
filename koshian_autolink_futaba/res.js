@@ -33,6 +33,7 @@ let g_hide_preview = false;
 let g_volume = 0.5;
 let max_width = 500;
 let max_height = 500;
+let sio_quate_link = false;
 
 function fixFormPosition() {
     let form = document.getElementById("ftbl");
@@ -143,6 +144,13 @@ function replaceText(node) {
     for (let i = 0; i < sio_pattern_list.length; ++i) {
         let sio_matches = node.nodeValue.match(sio_pattern_list[i]);
         if (sio_matches) {
+            let hasQuate = false;
+            let quate_pattern = /[>＞][ 　]*$/;
+            if (sio_matches[1]) {
+                hasQuate = quate_pattern.test(sio_matches[1]);
+//              console.log("res.js : hasQuate = " + hasQuate);
+                if (hasQuate && !sio_quate_link) break;
+            }
             let elem1 = document.createTextNode(sio_matches[1]);
             let elem2 = document.createElement("a");
             let elem3 = document.createTextNode(sio_matches[3]);
@@ -268,6 +276,7 @@ function onLoadSetting(result) {
     max_width = safeGetValue(result.max_width, 500);
     max_height = safeGetValue(result.max_height, 500);
     g_volume = safeGetValue(result.g_volume, 0.5);
+    sio_quate_link = safeGetValue(result.sio_quate_link, false);
 
     main();
 }
