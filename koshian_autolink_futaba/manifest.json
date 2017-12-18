@@ -1,0 +1,32 @@
+{
+    "manifest_version":2,
+
+    "name":"KOSHIAN 自動リンク生成 改",
+
+    "version":"1.0.0",
+
+    "description":"URLや塩のファイル名からリンクを作成します",
+
+    "icons":{
+        "48":"icons/icon-48.png"
+    },
+
+    "content_scripts":[
+        {
+            "matches":["*://*.2chan.net/*"],
+            "js":["res.js"]
+        }
+    ],
+
+    "options_ui":{
+        "page":"options.html"
+    },
+
+    "permissions":["storage"],
+
+    "applications":{
+        "gecko":{
+            "id":"{9519A0BA-E3D3-11E7-87D8-F1731843E317}"
+        }
+    }
+}
