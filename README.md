@@ -2,6 +2,8 @@
 このアドオンは[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)氏の[KOSHIAN 自動リンク生成](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/)アドオンを改変したものです  
 「引用された塩のファイル名のリンクを作成する」オプションをオリジナル版に追加しています  
 
+※他のKOSHIANアドオン改変版は[こちら](https://github.com/akoya-tomo/futaba_auto_reloader_K/wiki)の一覧からどうぞ
+
 ## 機能
 * オリジナルの機能（KOSHIAN 自動リンク生成）
   - ふたば☆ちゃんねるのスレッド画面でURLや塩のファイル名からリンクを作成します
@@ -16,6 +18,8 @@
 
 ## 注意事項
 * フレーム表示では動作しません
+* オリジナル版とは別アドオンなので設定は初期値に戻ります  
+  再度設定をお願い致します  
 
 ## 更新履歴
 * v1.0.1 2017-12-18
