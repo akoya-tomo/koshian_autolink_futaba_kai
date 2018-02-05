@@ -26,7 +26,8 @@
 
     "applications":{
         "gecko":{
-            "id":"{9519A0BA-E3D3-11E7-87D8-F1731843E317}"
+            "id":"{9519A0BA-E3D3-11E7-87D8-F1731843E317}",
+            "update_url": "https://raw.githubusercontent.com/akoya-tomo/koshian_autolink_futaba_kai/master/updates.json"
         }
     }
 }
