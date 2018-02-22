@@ -34,6 +34,7 @@ let g_volume = 0.5;
 let max_width = 500;
 let max_height = 500;
 let sio_quote_link = false;
+let use_preview_link = false;
 
 function fixFormPosition() {
     let form = document.getElementById("ftbl");
@@ -165,6 +166,7 @@ function replaceText(node) {
 
             if (g_preview) {
                 let preview = null;
+                let anchor = null;
                 let ext = sio_matches[2].split(/\./)[1].toLowerCase();
                 switch (ext) {
                     case "jpg":
@@ -173,6 +175,11 @@ function replaceText(node) {
                     case "gif":
                     case "bmp":
                         preview = document.createElement("img");
+                        anchor = document.createElement("a");
+                        anchor.href = `${sio_url_list[i]}${sio_matches[2]}`;
+                        if (g_use_blank) {
+                            anchor.target = "_blank";
+                        }
                         break;
                     case "wav":
                     case "mp3":
@@ -196,6 +203,10 @@ function replaceText(node) {
                     preview.style.maxHeight = `${max_height}px`;
                     preview.style.display = initial_hide ? "none" : "block";
                     parent.insertBefore(preview_switch, elem3);
+                    if (anchor && use_preview_link) {
+                        anchor.appendChild(preview);
+                        preview = anchor;
+                    }
                     parent.insertBefore(preview, node);
                     parent.removeChild(node);
                     return preview;
@@ -277,6 +288,7 @@ function onLoadSetting(result) {
     max_height = safeGetValue(result.max_height, 500);
     g_volume = safeGetValue(result.g_volume, 0.5);
     sio_quote_link = safeGetValue(result.sio_quote_link, false);
+    use_preview_link = safeGetValue(result.use_preview_link, false);
 
     main();
 }
