@@ -17,7 +17,7 @@
     有効にすると画像プレビュー上にリンクが作成されて、プレビューをクリックで画像が開けるようになります。  
 
 ## インストール
-[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.0.2/koshian_autolink_futaba_kai-1.0.2-an.fx.xpi)
+[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.1.0/koshian_autolink_futaba_kai-1.1.0-an.fx.xpi)
 
 ## 注意事項
 * このアドオンはWebExtensionアドオン対応のFirefox専用です。  
@@ -27,6 +27,8 @@
 * フレーム表示では動作しません。
 
 ## 更新履歴
+* v1.1.0 2018-02-22
+  - 「画像プレビュー上にリンクを作成する」オプションを追加
 * v1.0.2 2018-02-06
   - アドオンの自動更新を有効化
 * v1.0.1 2017-12-18
