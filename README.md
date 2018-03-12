@@ -17,7 +17,9 @@
     有効にすると画像プレビュー上にリンクが作成されて、プレビューをクリックで画像が開けるようになります。  
 
 ## インストール
-[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.1.0/koshian_autolink_futaba_kai-1.1.0-an.fx.xpi)
+[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.1.0/koshian_autolink_futaba_kai-1.1.0-an.fx.xpi)  
+
+※「接続エラーのため、アドオンをダウンロードできませんでした。」と表示されてインストール出来ない時はリンクを右クリックしてxpiファイルをダウンロードし、メニューのツール→アドオン（またはCtrl+Shift+A）で表示されたアドオンマネージャーのページにxpiファイルをドラッグ＆ドロップして下さい。  
 
 ## 注意事項
 * このアドオンはWebExtensionアドオン対応のFirefox専用です。  
