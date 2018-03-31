@@ -1,9 +1,9 @@
 ## KOSHIAN 自動リンク生成 改
-このFirefoxアドオンは[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)氏の[KOSHIAN 自動リンク生成](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/)アドオンを改変したものです。  
+このFirefoxアドオンはふたば☆ちゃんねるでURLや塩のファイル名からリンクを作成する[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)氏の[KOSHIAN 自動リンク生成](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/)アドオンを改変したものです。  
 「引用された塩のファイル名のリンクを作成する」オプションと「画像プレビュー上にリンクを作成する」オプションをオリジナル版に追加しています。  
 
 ※このアドオンはWebExtensionアドオン対応のFirefox専用となります。  
-※他のKOSHIANアドオン改変版とUserscriptは[こちら](https://github.com/akoya-tomo/futaba_auto_reloader_K/wiki/)の一覧からどうぞ。
+※他のこしあんアドオン改変版とUserscriptは[こちら](https://github.com/akoya-tomo/futaba_auto_reloader_K/wiki/)の一覧からどうぞ。
 
 ## 機能
 * オリジナルの機能（KOSHIAN 自動リンク生成）
