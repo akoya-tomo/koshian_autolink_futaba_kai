@@ -3,13 +3,17 @@
 
     "name":"KOSHIAN 自動リンク生成 改",
 
-    "version":"1.1.0",
+    "version":"1.1.1",
 
     "description":"URLや塩のファイル名からリンクを作成します",
 
     "icons":{
         "48":"icons/icon-48.png"
     },
+
+    "author": "akoya_tomo",
+
+    "homepage_url": "https://github.com/akoya-tomo/koshian_autolink_futaba_kai/",
 
     "content_scripts":[
         {
