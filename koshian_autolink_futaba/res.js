@@ -23,6 +23,7 @@ const sio_url_list = [
 ];
 
 const UPLOADER_NUM = 8;
+const quote_pattern = /[>＞][ 　]*$/;
 let g_replace_all_page = true;
 let g_replace_url = true;
 let g_replace_file = true;
@@ -145,11 +146,9 @@ function replaceText(node) {
     for (let i = 0; i < sio_pattern_list.length; ++i) {
         let sio_matches = node.nodeValue.match(sio_pattern_list[i]);
         if (sio_matches) {
-            let hasQuote = false;
-            let quote_pattern = /[>＞][ 　]*$/;
             if (sio_matches[1]) {
-                hasQuote = quote_pattern.test(sio_matches[1]);
-//              console.log("res.js : hasQuote = " + hasQuote);
+                let hasQuote = quote_pattern.test(sio_matches[1]);
+                //console.log("res.js : hasQuote = " + hasQuote);
                 if (hasQuote && !sio_quote_link) break;
             }
             let elem1 = document.createTextNode(sio_matches[1]);
