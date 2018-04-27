@@ -156,6 +156,10 @@ function replaceText(node) {
             let elem2 = document.createElement("a");
             let elem3 = document.createTextNode(sio_matches[3]);
             elem2.href = `${sio_url_list[i]}${sio_matches[2]}`;
+            if (/^(sz|sq)/.test(sio_matches[2])) {
+                //塩大瓶・中瓶のDLKey付対策でリンクの拡張子を削除
+                elem2.href = `${sio_url_list[i]}${sio_matches[2].split(/\./)[0]}`;
+            }
             elem2.text = sio_matches[2];
             if (g_use_blank) {
                 elem2.target = "_blank";
