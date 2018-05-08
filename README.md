@@ -17,7 +17,7 @@
     有効にすると画像プレビュー上にリンクが作成されて、プレビューをクリックで画像が開けるようになります。  
 
 ## インストール
-[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.1.1/koshian_autolink_futaba_kai-1.1.1-an.fx.xpi)  
+[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.1.2/koshian_autolink_futaba_kai-1.1.2-an.fx.xpi)  
 
 ※「接続エラーのため、アドオンをダウンロードできませんでした。」と表示されてインストール出来ない時はリンクを右クリックしてxpiファイルをダウンロードし、メニューのツール→アドオン（またはCtrl+Shift+A）で表示されたアドオンマネージャーのページにxpiファイルをドラッグ＆ドロップして下さい。  
 
@@ -29,6 +29,8 @@
 * フレーム表示では動作しません。
 
 ## 更新履歴
+* v1.1.2 2018-05-08
+  - あぷ・あぷ小のリンク修正
 * v1.1.1 2018-04-28
   - 塩の大瓶・中瓶のDLKey付対策でリンクの拡張子を削除
 * v1.1.0 2018-02-22
