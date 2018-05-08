@@ -12,8 +12,8 @@ const sio_pattern_list = [
 ];
 
 const sio_url_list = [
-    `http://133.242.9.183/up/src/`,
-    `http://133.242.9.183/up2/src/`,
+    `http://dec.2chan.net/up/src/`,
+    `http://dec.2chan.net/up2/src/`,
     `http://www.siokarabin.com/futabafiles/big/src/`,
     `http://www.nijibox6.com/futabafiles/mid/src/`,
     `http://www.nijibox5.com/futabafiles/tubu/src/`,
