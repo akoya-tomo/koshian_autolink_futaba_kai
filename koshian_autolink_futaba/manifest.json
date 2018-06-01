@@ -17,7 +17,7 @@
 
     "content_scripts":[
         {
-            "matches":["*://*.2chan.net/*"],
+            "matches":["*://*.2chan.net/*","*://kako.futakuro.com/futa/*_b/*"],
             "js":["res.js"]
         }
     ],
