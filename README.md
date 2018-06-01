@@ -1,44 +1,46 @@
-## KOSHIAN ���������N���� ��
-����Firefox�A�h�I���͂ӂ��΁������˂��URL�≖�̃t�@�C�������烊���N���쐬����[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)����[KOSHIAN ���������N����](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/)�A�h�I�������ς������̂ł��B  
-�u���p���ꂽ���̃t�@�C�����̃����N���쐬����v�I�v�V�����Ɓu�摜�v���r���[��Ƀ����N���쐬����v�I�v�V�������I���W�i���łɒǉ����Ă��܂��B  
+## KOSHIAN 自動リンク生成 改
+このFirefoxアドオンはふたば☆ちゃんねるでURLや塩のファイル名からリンクを作成する[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)氏の[KOSHIAN 自動リンク生成](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/)アドオンを改変したものです。  
+「引用された塩のファイル名のリンクを作成する」オプションと「画像プレビュー上にリンクを作成する」オプションをオリジナル版に追加しています。  
 
-�����̃A�h�I����WebExtension�A�h�I���Ή���Firefox��p�ƂȂ�܂��B  
-�����̂�������A�h�I�����ϔł�Userscript��[������](https://github.com/akoya-tomo/futaba_auto_reloader_K/wiki/)�̈ꗗ����ǂ����B
+※このアドオンはWebExtensionアドオン対応のFirefox専用となります。  
+※他のこしあんアドオン改変版とUserscriptは[こちら](https://github.com/akoya-tomo/futaba_auto_reloader_K/wiki/)の一覧からどうぞ。
 
-## �@�\
-* �I���W�i���̋@�\�iKOSHIAN ���������N�����j
-  - �ӂ��΁������˂�̃X���b�h��ʂ�URL�≖�̃t�@�C�������烊���N���쐬���܂��B
-* �ǉ����ꂽ�@�\�iKOSHIAN ���������N���� ���j
-  - �u���p���ꂽ���̃t�@�C�����̃����N���쐬����v�I�v�V�����i�f�t�H���g�F�����j  
-    �����ɂ���ƈ��p���ꂽ���̃t�@�C�����̓����N�쐬���܂���B  
-    ����̓����N�쐬�����[KOSHIAN ���p���|�b�v�A�b�v�ŕ\��](https://addons.mozilla.org/ja/firefox/addon/koshian-popup-quote/)�A�h�I�������p���|�b�v�A�b�v�ł��Ȃ��Ȃ邽�߂ł��B  
-    �L���ɂ���ƃI���W�i���łƓ��l�Ɉ��p���ꂽ���̃t�@�C�����������N�쐬���܂��B  
-  - �u�摜�v���r���[��Ƀ����N���쐬����v�I�v�V�����i�f�t�H���g�F�����j  
-    �L���ɂ���Ɖ摜�v���r���[��Ƀ����N���쐬����āA�v���r���[���N���b�N�ŉ摜���J����悤�ɂȂ�܂��B  
+## 機能
+* オリジナルの機能（KOSHIAN 自動リンク生成）
+  - ふたば☆ちゃんねるのスレッド画面でURLや塩のファイル名からリンクを作成します。
+* 追加された機能（KOSHIAN 自動リンク生成 改）
+  - 「引用された塩のファイル名のリンクを作成する」オプション（デフォルト：無効）  
+    無効にすると引用された塩のファイル名はリンク作成しません。  
+    これはリンク作成すると[KOSHIAN 引用をポップアップで表示](https://addons.mozilla.org/ja/firefox/addon/koshian-popup-quote/)アドオンが引用元ポップアップできなくなるためです。  
+    有効にするとオリジナル版と同様に引用された塩のファイル名もリンク作成します。  
+  - 「画像プレビュー上にリンクを作成する」オプション（デフォルト：無効）  
+    有効にすると画像プレビュー上にリンクが作成されて、プレビューをクリックで画像が開けるようになります。  
 
-## �C���X�g�[��
-[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.1.2/koshian_autolink_futaba_kai-1.1.2-an.fx.xpi)  
+## インストール
+[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.1.3/koshian_autolink_futaba_kai-1.1.3-an.fx.xpi)  
 
-���u�ڑ��G���[�̂��߁A�A�h�I�����_�E�����[�h�ł��܂���ł����B�v�ƕ\������ăC���X�g�[���o���Ȃ����̓����N���E�N���b�N����xpi�t�@�C�����_�E�����[�h���A���j���[�̃c�[�����A�h�I���i�܂���Ctrl+Shift+A�j�ŕ\�����ꂽ�A�h�I���}�l�[�W���[�̃y�[�W��xpi�t�@�C�����h���b�O���h���b�v���ĉ������B  
+※「接続エラーのため、アドオンをダウンロードできませんでした。」と表示されてインストール出来ない時はリンクを右クリックしてxpiファイルをダウンロードし、メニューのツール→アドオン（またはCtrl+Shift+A）で表示されたアドオンマネージャーのページにxpiファイルをドラッグ＆ドロップして下さい。  
 
-## ���ӎ���
-* ���̃A�h�I����WebExtension�A�h�I���Ή���Firefox��p�ł��B  
-* �{�A�h�I����L���������Ƃ��̓I���W�i���ł𖳌����܂��͍폜���ĉ������B  
-* �I���W�i���łƂ͕ʃA�h�I���Ȃ̂Őݒ�͏����l�ɖ߂�܂��B  
-  �ēx�ݒ�����肢�v���܂��B  
-* �t���[���\���ł͓��삵�܂���B
+## 注意事項
+* このアドオンはWebExtensionアドオン対応のFirefox専用です。  
+* 本アドオンを有効化したときはオリジナル版を無効化または削除して下さい。  
+* オリジナル版とは別アドオンなので設定は初期値に戻ります。  
+  再度設定をお願い致します。  
+* フレーム表示では動作しません。
 
-## �X�V����
+## 更新履歴
+* v1.1.3 2018-06-01
+  - アドオンを実行するサイトに[ふたポ](http://futapo.futakuro.com/)の過去ログ\(kako.futakuro.com\)を追加  
 * v1.1.2 2018-05-08
-  - ���ՁE���Տ��̃����N�C��
+  - あぷ・あぷ小のリンク修正
 * v1.1.1 2018-04-28
-  - ���̑�r�E���r��DLKey�t�΍�Ń����N�̊g���q���폜
+  - 塩の大瓶・中瓶のDLKey付対策でリンクの拡張子を削除
 * v1.1.0 2018-02-22
-  - �u�摜�v���r���[��Ƀ����N���쐬����v�I�v�V������ǉ�
+  - 「画像プレビュー上にリンクを作成する」オプションを追加
 * v1.0.2 2018-02-06
-  - �A�h�I���̎����X�V��L����
+  - アドオンの自動更新を有効化
 * v1.0.1 2017-12-18
-  - typo�C��
+  - typo修正
 * v1.0.0 2017-12-18
-  - KOSHIAN ���������N���� v1.4.3�x�[�X
-  - �u���p���ꂽ���̃t�@�C�����̃����N���쐬����v�I�v�V������ǉ�
+  - KOSHIAN 自動リンク生成 v1.4.3ベース
+  - 「引用された塩のファイル名のリンクを作成する」オプションを追加
