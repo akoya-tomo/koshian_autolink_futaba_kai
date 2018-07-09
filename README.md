@@ -1,9 +1,9 @@
-## KOSHIAN 自動リンク生成 改
-このFirefoxアドオンはふたば☆ちゃんねるでURLや塩のファイル名からリンクを作成する[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)氏の[KOSHIAN 自動リンク生成](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/)アドオンを改変したものです。  
+## <sub><img src="koshian_autolink_futaba/icons/icon-48.png"></sub> KOSHIAN 自動リンク生成 改
+このFirefoxアドオンはふたば☆ちゃんねるでURLや塩のファイル名からリンクを作成する[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)氏の[KOSHIAN 自動リンク生成](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/)を改変したものです。  
 「引用された塩のファイル名のリンクを作成する」オプションと「画像プレビュー上にリンクを作成する」オプションをオリジナル版に追加しています。  
 
 ※このアドオンはWebExtensionアドオン対応のFirefox専用となります。  
-※他のこしあんアドオン改変版とUserscriptは[こちら](https://github.com/akoya-tomo/futaba_auto_reloader_K/wiki/)の一覧からどうぞ。
+※他のKOSHIAN改変版などのふたば閲覧支援ツールは[こちら](https://github.com/akoya-tomo/futaba_auto_reloader_K/wiki/)。
 
 ## 機能
 * オリジナルの機能（KOSHIAN 自動リンク生成）
@@ -17,13 +17,13 @@
     有効にすると画像プレビュー上にリンクが作成されて、プレビューをクリックで画像が開けるようになります。  
 
 ## インストール
-[GitHub](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.1.3/koshian_autolink_futaba_kai-1.1.3-an.fx.xpi)  
+**GitHub**  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.1.3/koshian_autolink_futaba_kai-1.1.3-an.fx.xpi)  
 
-※「接続エラーのため、アドオンをダウンロードできませんでした。」と表示されてインストール出来ない時はリンクを右クリックしてxpiファイルをダウンロードし、メニューのツール→アドオン（またはCtrl+Shift+A）で表示されたアドオンマネージャーのページにxpiファイルをドラッグ＆ドロップして下さい。  
+※「接続エラーのため、アドオンをダウンロードできませんでした。」と表示されてインストール出来ない時はインストールボタンを右クリックしてxpiファイルをダウンロードし、メニューのツール→アドオン（またはCtrl+Shift+A）で表示されたアドオンマネージャーのページにxpiファイルをドラッグ＆ドロップして下さい。  
 
 ## 注意事項
-* このアドオンはWebExtensionアドオン対応のFirefox専用です。  
-* 本アドオンを有効化したときはオリジナル版を無効化または削除して下さい。  
+* 本アドオンを有効にしたときはオリジナル版を無効にするか削除して下さい。  
 * オリジナル版とは別アドオンなので設定は初期値に戻ります。  
   再度設定をお願い致します。  
 * フレーム表示では動作しません。
