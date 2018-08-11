@@ -56,12 +56,14 @@ function fixFormPosition() {
 }
 
 function getYoutubeUrl(url) {
+    let hostname = "www";
     let watch = "";
 
-    let long_url = url.match(/https?:\/\/www\.youtube.com\/watch\?.*v=([0-9A-Za-z_-]+).*/);
+    let long_url = url.match(/https?:\/\/([-0-9A-Za-z]+)\.youtube.com\/watch\?.*v=([0-9A-Za-z_-]+).*/);
 
     if (long_url) {
-        watch = long_url[1];
+        hostname = long_url[1];
+        watch = long_url[2];
     }
 
     let short_url = url.match(/https?:\/\/youtu\.be\/([0-9A-Za-z_-]+).*/);
@@ -70,7 +72,7 @@ function getYoutubeUrl(url) {
     }
 
     if (watch) {
-        return `https://www.YouTube.com/embed/${watch}?enablejsapi=1`;
+        return `https://${hostname}.YouTube.com/embed/${watch}?enablejsapi=1`;
     } else {
         return null;
     }
