@@ -34,6 +34,7 @@ let g_hide_preview = false;
 let g_volume = 0.5;
 let max_width = 500;
 let max_height = 500;
+let youtube_width = 0;
 let sio_quote_link = false;
 let use_preview_link = false;
 
@@ -55,12 +56,14 @@ function fixFormPosition() {
 }
 
 function getYoutubeUrl(url) {
+    let hostname = "www";
     let watch = "";
 
-    let long_url = url.match(/https?:\/\/www\.youtube.com\/watch\?.*v=([0-9A-Za-z_-]+).*/);
+    let long_url = url.match(/https?:\/\/([-0-9A-Za-z]+)\.youtube.com\/watch\?.*v=([0-9A-Za-z_-]+).*/);
 
     if (long_url) {
-        watch = long_url[1];
+        hostname = long_url[1];
+        watch = long_url[2];
     }
 
     let short_url = url.match(/https?:\/\/youtu\.be\/([0-9A-Za-z_-]+).*/);
@@ -69,7 +72,7 @@ function getYoutubeUrl(url) {
     }
 
     if (watch) {
-        return `https://www.YouTube.com/embed/${watch}?enablejsapi=1`;
+        return `https://${hostname}.YouTube.com/embed/${watch}?enablejsapi=1`;
     } else {
         return null;
     }
@@ -132,6 +135,13 @@ function replaceText(node) {
                 iframe.style.maxWidth = `${max_width}px`;
                 iframe.style.maxHeight = `${max_height}px`;
                 iframe.style.display = initial_hide ? "none" : "block";
+                if (youtube_width > 0) {
+                    let youtube_height = Math.round(youtube_width * 9 / 16);
+                    iframe.style.maxWidth = `${youtube_width}px`;
+                    iframe.style.width = `${youtube_width}px`;
+                    iframe.style.maxHeight = `${youtube_height}px`;
+                    iframe.style.height = `${youtube_height}px`;
+                }
                 parent.insertBefore(preview_switch, elem3);
                 parent.insertBefore(iframe, node);
                 parent.removeChild(node);
@@ -290,6 +300,7 @@ function onLoadSetting(result) {
     max_width = safeGetValue(result.max_width, 500);
     max_height = safeGetValue(result.max_height, 500);
     g_volume = safeGetValue(result.g_volume, 0.5);
+    youtube_width = safeGetValue(result.youtube_width, 0);
     sio_quote_link = safeGetValue(result.sio_quote_link, false);
     use_preview_link = safeGetValue(result.use_preview_link, false);
 
