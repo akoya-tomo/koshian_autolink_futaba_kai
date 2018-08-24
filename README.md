@@ -9,7 +9,7 @@
 * オリジナルの機能（KOSHIAN 自動リンク生成）
   - ふたば☆ちゃんねるのスレッド画面でURLや塩のファイル名からリンクを作成します。
 * 追加された機能（KOSHIAN 自動リンク生成 改）
-  - \(New\) 「YouTubeのプレビュー横幅」オプション（デフォルト：0 = デフォルトの横幅）  
+  - [![\(New\)](images/new.png "New")]() 「YouTubeのプレビュー横幅」オプション（デフォルト：0 = デフォルトの横幅）  
     YouTubeのプレビューサイズはデフォルトだと最大でも300px × 150pxです。  
     このオプションを設定すると、指定した横幅でYouTubeのプレビューを表示することができます。  
     （プレビュー最大幅の設定より優先されます）  
@@ -22,7 +22,7 @@
 
 ## インストール
 **GitHub**  
-[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.2.0/koshian_autolink_futaba_kai-1.2.0-an+fx.xpi)  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.2.1/koshian_autolink_futaba_kai-1.2.1-an+fx.xpi)  
 
 ※「接続エラーのため、アドオンをダウンロードできませんでした。」と表示されてインストール出来ない時はインストールボタンを右クリックしてxpiファイルをダウンロードし、メニューのツール→アドオン（またはCtrl+Shift+A）で表示されたアドオンマネージャーのページにxpiファイルをドラッグ＆ドロップして下さい。  
 
@@ -33,6 +33,8 @@
 * フレーム表示では動作しません。
 
 ## 更新履歴
+* v1.2.1 2018-08-24
+  - v1.2.0でm.youtube.comがプレビューできない不具合を修正  
 * v1.2.0 2018-08-11
   - YouTubeのプレビュー横幅の設定を追加  
   - gaming.youtube.comのプレビューを表示するように修正  
