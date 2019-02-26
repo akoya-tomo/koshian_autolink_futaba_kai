@@ -1,4 +1,4 @@
-const url_pattern = /(.*)(https?:\/\/[0-9A-Za-z-.,_~!#$%&'()*+,/:;=?@[\]]+)(.*)/;
+const url_pattern = /(.*?)(h?ttps?:\/\/[0-9A-Za-z-.,_~!#$%&'()*+,/:;=?@[\]]+)(.*)/;
 
 const sio_pattern_list = [
     /(.*)(f\d+\.[0-9A-Za-z]+)(.*)/,
@@ -59,7 +59,7 @@ function getYoutubeUrl(url) {
     let hostname = "www";
     let watch = "";
 
-    let long_url = url.match(/https?:\/\/([-0-9A-Za-z]+)\.youtube.com\/watch\?.*v=([0-9A-Za-z_-]+).*/);
+    let long_url = url.match(/h?ttps?:\/\/([-0-9A-Za-z]+)\.youtube.com\/watch\?.*v=([0-9A-Za-z_-]+).*/);
 
     if (long_url) {
         if (long_url[1] != "m") {
@@ -68,7 +68,7 @@ function getYoutubeUrl(url) {
         watch = long_url[2];
     }
 
-    let short_url = url.match(/https?:\/\/youtu\.be\/([0-9A-Za-z_-]+).*/);
+    let short_url = url.match(/h?ttps?:\/\/youtu\.be\/([0-9A-Za-z_-]+).*/);
     if (short_url) {
         watch = short_url[1];
     }
@@ -116,7 +116,7 @@ function replaceText(node) {
         let elem1 = document.createTextNode(url_matches[1]);
         let elem2 = document.createElement("a");
         let elem3 = document.createTextNode(url_matches[3]);
-        elem2.href = url_matches[2];
+        elem2.href = url_matches[2].indexOf("h") === 0 ? url_matches[2] : "h" + url_matches[2];
         elem2.text = url_matches[2];
         if (g_use_blank) {
             elem2.target = "_blank";
@@ -243,7 +243,7 @@ function process(beg = 0) {
     let end = Math.min(rtd_list.length, g_max_response);
 
     for (let i = beg; i < end; ++i) {
-        for (let j = 0, targets = rtd_list[i].querySelectorAll("blockquote,blockquote>font"); j < targets.length; ++j) {
+        for (let j = 0, targets = rtd_list[i].querySelectorAll("blockquote,blockquote>font,blockquote>a,blockquote>font>a"); j < targets.length; ++j) {
             for (let node = targets[j].firstChild; node; node = node.nextSibling) {
                 if (node.nodeType == Node.TEXT_NODE) {
                     node = replaceText(node);
@@ -259,7 +259,7 @@ function process(beg = 0) {
 
 function main() {
     if (/.+res\/[0-9]+.html?/.test(location.href)) {
-        for (let i = 0, targets = document.querySelectorAll(".thre>blockquote,.thre>blockquote>font"); i < targets.length; ++i) {
+        for (let i = 0, targets = document.querySelectorAll(".thre>blockquote,.thre>blockquote>font,.thre>blockquote>a,.thre>blockquote>font>a"); i < targets.length; ++i) {
             for (let node = targets[i].firstChild; node; node = node.nextSibling) {
                 if (node.nodeType == Node.TEXT_NODE) {
                     node = replaceText(node);
@@ -273,7 +273,7 @@ function main() {
             process(last_process_index);
         });
     } else if (g_replace_all_page) {
-        for (let i = 0, targets = document.querySelectorAll("blockquote,blockquote>font"); i < targets.length; ++i) {
+        for (let i = 0, targets = document.querySelectorAll("blockquote,blockquote>font,blockquote>a,blockquote>font>a"); i < targets.length; ++i) {
             for (let node = targets[i].firstChild; node; node = node.nextSibling) {
                 if (node.nodeType == Node.TEXT_NODE) {
                     node = replaceText(node);

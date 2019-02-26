@@ -22,7 +22,7 @@
 
 ## インストール
 **GitHub**  
-[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.2.1/koshian_autolink_futaba_kai-1.2.1-an+fx.xpi)  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.2.2/koshian_autolink_futaba_kai-1.2.2-fx.xpi)  
 
 ※「接続エラーのため、アドオンをダウンロードできませんでした。」と表示されてインストール出来ない時はインストールボタンを右クリックしてxpiファイルをダウンロードし、メニューのツール→アドオン（またはCtrl+Shift+A）で表示されたアドオンマネージャーのページにxpiファイルをドラッグ＆ドロップして下さい。  
 
@@ -33,6 +33,9 @@
 * フレーム表示では動作しません。
 
 ## 更新履歴
+* v1.2.2 2019-02-26
+  - ふたばのリンクの仕様変更に対応
+  - h抜きURLでもリンクを作成するように修正
 * v1.2.1 2018-08-25
   - v1.2.0でm.youtube.comがプレビューできない不具合を修正  
 * v1.2.0 2018-08-11
