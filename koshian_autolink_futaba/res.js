@@ -1,4 +1,4 @@
-const url_pattern = /(.*)(https?:\/\/[0-9A-Za-z-.,_~!#$%&'()*+,/:;=?@[\]]+)(.*)/;
+const url_pattern = /(.*?)(h?ttps?:\/\/[0-9A-Za-z-.,_~!#$%&'()*+,/:;=?@[\]]+)(.*)/;
 
 const sio_pattern_list = [
     /(.*)(f\d+\.[0-9A-Za-z]+)(.*)/,
@@ -59,7 +59,7 @@ function getYoutubeUrl(url) {
     let hostname = "www";
     let watch = "";
 
-    let long_url = url.match(/https?:\/\/([-0-9A-Za-z]+)\.youtube.com\/watch\?.*v=([0-9A-Za-z_-]+).*/);
+    let long_url = url.match(/h?ttps?:\/\/([-0-9A-Za-z]+)\.youtube.com\/watch\?.*v=([0-9A-Za-z_-]+).*/);
 
     if (long_url) {
         if (long_url[1] != "m") {
@@ -68,7 +68,7 @@ function getYoutubeUrl(url) {
         watch = long_url[2];
     }
 
-    let short_url = url.match(/https?:\/\/youtu\.be\/([0-9A-Za-z_-]+).*/);
+    let short_url = url.match(/h?ttps?:\/\/youtu\.be\/([0-9A-Za-z_-]+).*/);
     if (short_url) {
         watch = short_url[1];
     }
@@ -116,7 +116,7 @@ function replaceText(node) {
         let elem1 = document.createTextNode(url_matches[1]);
         let elem2 = document.createElement("a");
         let elem3 = document.createTextNode(url_matches[3]);
-        elem2.href = url_matches[2];
+        elem2.href = url_matches[2].indexOf("h") === 0 ? url_matches[2] : "h" + url_matches[2];
         elem2.text = url_matches[2];
         if (g_use_blank) {
             elem2.target = "_blank";
