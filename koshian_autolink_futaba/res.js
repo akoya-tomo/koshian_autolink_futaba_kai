@@ -243,7 +243,7 @@ function process(beg = 0) {
     let end = Math.min(rtd_list.length, g_max_response);
 
     for (let i = beg; i < end; ++i) {
-        for (let j = 0, targets = rtd_list[i].querySelectorAll("blockquote,blockquote>font"); j < targets.length; ++j) {
+        for (let j = 0, targets = rtd_list[i].querySelectorAll("blockquote,blockquote>font,blockquote>a,blockquote>font>a"); j < targets.length; ++j) {
             for (let node = targets[j].firstChild; node; node = node.nextSibling) {
                 if (node.nodeType == Node.TEXT_NODE) {
                     node = replaceText(node);
@@ -259,7 +259,7 @@ function process(beg = 0) {
 
 function main() {
     if (/.+res\/[0-9]+.html?/.test(location.href)) {
-        for (let i = 0, targets = document.querySelectorAll(".thre>blockquote,.thre>blockquote>font"); i < targets.length; ++i) {
+        for (let i = 0, targets = document.querySelectorAll(".thre>blockquote,.thre>blockquote>font,.thre>blockquote>a,.thre>blockquote>font>a"); i < targets.length; ++i) {
             for (let node = targets[i].firstChild; node; node = node.nextSibling) {
                 if (node.nodeType == Node.TEXT_NODE) {
                     node = replaceText(node);
@@ -273,7 +273,7 @@ function main() {
             process(last_process_index);
         });
     } else if (g_replace_all_page) {
-        for (let i = 0, targets = document.querySelectorAll("blockquote,blockquote>font"); i < targets.length; ++i) {
+        for (let i = 0, targets = document.querySelectorAll("blockquote,blockquote>font,blockquote>a,blockquote>font>a"); i < targets.length; ++i) {
             for (let node = targets[i].firstChild; node; node = node.nextSibling) {
                 if (node.nodeType == Node.TEXT_NODE) {
                     node = replaceText(node);
