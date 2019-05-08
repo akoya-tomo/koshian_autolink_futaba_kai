@@ -34,6 +34,7 @@ let g_hide_preview = false;
 let g_volume = 0.5;
 let max_width = 500;
 let max_height = 500;
+let g_youtube_preview = true;
 let youtube_width = 0;
 let sio_quote_link = false;
 let use_preview_link = false;
@@ -84,7 +85,7 @@ function createPreviewSwitch(elem, hide) {
     let switch_button = document.createElement("a");
     switch_button.className = "KOSHIAN_PreviewSwitch";
     switch_button.href = "javascript:void(0)";
-    switch_button.text = hide ? "[見る]" : "[隠す]"
+    switch_button.text = hide ? "[見る]" : "[隠す]";
     switch_button.style.fontSize = "small";
     switch_button.appendChild(elem);
     switch_button.onclick = (e) => {
@@ -125,7 +126,7 @@ function replaceText(node) {
         parent.insertBefore(elem2, node);
         parent.insertBefore(elem3, node);
 
-        if (g_preview) {
+        if (g_youtube_preview) {
             let youtube_url = getYoutubeUrl(url_matches[2]);
             if (youtube_url) {
                 let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : false);
@@ -272,6 +273,11 @@ function main() {
         document.addEventListener("KOSHIAN_reload", (e) => {
             process(last_process_index);
         });
+
+        let contdisp = document.getElementById("contdisp");
+        if (contdisp) {
+            check2chanReload(contdisp);
+        }
     } else if (g_replace_all_page) {
         for (let i = 0, targets = document.querySelectorAll("blockquote,blockquote>font,blockquote>a,blockquote>font>a"); i < targets.length; ++i) {
             for (let node = targets[i].firstChild; node; node = node.nextSibling) {
@@ -282,6 +288,28 @@ function main() {
         }
         
         fixFormPosition();
+    }
+
+    function check2chanReload(target) {
+        let status = "";
+        let reloading = false;
+        let config = { childList: true };
+        let observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (target.textContent == status) return;
+                status = target.textContent;
+                if (status == "・・・") {
+                    reloading = true;
+                } else
+                if (reloading && status.endsWith("頃消えます")) {
+                    process(last_process_index);
+                    reloading = false;
+                } else {
+                    reloading = false;
+                }
+            });
+        });
+        observer.observe(target, config);
     }
 }
 
@@ -302,6 +330,7 @@ function onLoadSetting(result) {
     max_width = safeGetValue(result.max_width, 500);
     max_height = safeGetValue(result.max_height, 500);
     g_volume = safeGetValue(result.g_volume, 0.5);
+    g_youtube_preview = safeGetValue(result.use_youtube_preview, true);
     youtube_width = safeGetValue(result.youtube_width, 0);
     sio_quote_link = safeGetValue(result.sio_quote_link, false);
     use_preview_link = safeGetValue(result.use_preview_link, false);
