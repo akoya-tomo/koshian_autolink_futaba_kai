@@ -7,8 +7,10 @@
 
 ## 機能
 * オリジナルの機能（KOSHIAN 自動リンク生成）
-  - ふたば☆ちゃんねるのスレッド画面でURLや塩のファイル名からリンクを作成します。
+  - ふたば☆ちゃんねるのレス送信モードでURLや塩のファイル名からリンクを作成します。
 * 追加された機能（KOSHIAN 自動リンク生成 改）
+  - 「YouTubeのプレビューを表示する」オプション（デフォルト：有効）  
+    YouTubeのプレビューを表示します。[KOSHIAN リロード拡張](https://addons.mozilla.org/ja/firefox/addon/koshian-reload-futaba/)（[改](https://github.com/akoya-tomo/koshian_reload_futaba_kai)）無しでふたばのリロードを使用するときは無効にして下さい。（リロードの度にYouTubeのプレビューが再読み込みされるため）  
   - 「YouTubeのプレビュー横幅」オプション（デフォルト：0 = デフォルトの横幅）  
     YouTubeのプレビューサイズはデフォルトだと最大でも300px × 150pxです。  
     このオプションを設定すると、指定した横幅でYouTubeのプレビューを表示することができます。  
@@ -22,7 +24,10 @@
 
 ## インストール
 **GitHub**  
-[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.0/koshian_autolink_futaba_kai-1.3.0-fx.xpi)  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.1/koshian_autolink_futaba_kai-1.3.1-fx.xpi)  
+
+※![\(New\)](images/new.png "New") v1.3.1からアドオンのアクセス許可に「」ッチー(`tsumanne.net`)・FTBucket(`ftbucket.info`)が追加になります。（アドオンを動作させるため）  
+※v1.1.3からアドオンのアクセス許可にふたポの過去ログ\(`kako.futakuro.com`\)が追加になります。（アドオンを動作させるため） 
 
 ※「接続エラーのため、アドオンをダウンロードできませんでした。」と表示されてインストール出来ない時はインストールボタンを右クリックしてxpiファイルをダウンロードし、メニューのツール→アドオン（またはCtrl+Shift+A）で表示されたアドオンマネージャーのページにxpiファイルをドラッグ＆ドロップして下さい。  
 
@@ -31,10 +36,10 @@
 * オリジナル版とは別アドオンなので設定は初期値に戻ります。  
   再度設定をお願い致します。  
 * フレーム表示では動作しません。  
-* ![\(New\)](images/new.png "New") ふたばのリロード拡張アドオン（KOSHIAN リロード拡張（改）・赤福extended）無しで使用する場合は設定の「YouTubeのプレビューを表示する」を無効にして下さい。  
-  （リロードの度にYouTubeのプレビューが再読み込みされるため）  
 
 ## 更新履歴
+* v1.3.1 2019-06-17
+  - アドオンを実行するサイトにログサイト2件を追加
 * v1.3.0 2019-05-09
   - ふたばのリロードの仕様変更に対応
 * v1.2.2 2019-02-26
