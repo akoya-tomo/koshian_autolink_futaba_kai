@@ -22,11 +22,7 @@ const sio_url_list = [
     `http://www.nijibox2.com/futabafiles/003/src/`,
 ];
 
-const UPLOADER_NUM = 8;
-const quote_pattern = /[>＞][ 　]*$/;
 let g_replace_all_page = true;
-let g_replace_url = true;
-let g_replace_file = true;
 let g_use_blank = true;
 let g_max_response = 2000;
 let g_preview = true;
@@ -90,7 +86,7 @@ function createPreviewSwitch(elem, hide) {
     switch_button.text = hide ? "[見る]" : "[隠す]";
     switch_button.style.fontSize = "small";
     switch_button.appendChild(elem);
-    switch_button.onclick = (e) => {
+    switch_button.onclick = (e) => {    // eslint-disable-line no-unused-vars
         if (elem.style.display == "none") {
             elem.style.display = "block";
             switch_button.text = "[隠す]";
@@ -284,7 +280,7 @@ function main() {
 
         process();
 
-        document.addEventListener("KOSHIAN_reload", (e) => {
+        document.addEventListener("KOSHIAN_reload", (e) => {    // eslint-disable-line no-unused-vars
             process(last_process_index);
         });
 
@@ -309,7 +305,7 @@ function main() {
         let reloading = false;
         let config = { childList: true };
         let observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
+            mutations.forEach(function(mutation) {  // eslint-disable-line no-unused-vars
                 if (target.textContent == status) return;
                 status = target.textContent;
                 if (status == "・・・") {
@@ -352,7 +348,7 @@ function onLoadSetting(result) {
     main();
 }
 
-function onError(e) {
+function onError(e) {   // eslint-disable-line no-unused-vars
 
 }
 
