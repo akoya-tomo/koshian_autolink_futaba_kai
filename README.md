@@ -1,33 +1,35 @@
 ## <sub><img src="koshian_autolink_futaba/icons/icon-48.png"></sub> KOSHIAN 自動リンク生成 改
-このFirefoxアドオンはふたば☆ちゃんねるでURLや塩のファイル名からリンクを作成する[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)氏の[KOSHIAN 自動リンク生成](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/)の非公式改変版です。  
-「YouTubeのプレビュー横幅」などのオプションをオリジナル版に追加しています。  
+この Firefoxアドオンはふたば☆ちゃんねるでURLや塩のファイル名からリンクを作成する[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)氏の [KOSHIAN 自動リンク生成](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/) の非公式改変版です。  
+「YouTube のプレビュー横幅」などのオプションをオリジナル版に追加しています。  
 
-※このアドオンはWebExtensionアドオン対応のFirefox専用となります。  
-※他のKOSHIAN改変版などのふたば閲覧支援ツールは[こちら](https://github.com/akoya-tomo/futaba_auto_reloader_K/wiki/)。
+※このアドオンは WebExtensionアドオン対応の Firefox専用となります。  
+※他の KOSHIAN改変版などのふたば閲覧支援ツールは [こちら](https://github.com/akoya-tomo/futaba_auto_reloader_K/wiki/)。
 
 ## 機能
 * オリジナルの機能（KOSHIAN 自動リンク生成）
   - ふたば☆ちゃんねるのレス送信モードでURLや塩のファイル名からリンクを作成します。
 * 追加された機能（KOSHIAN 自動リンク生成 改）
-  - 「YouTubeのプレビューを表示する」オプション（デフォルト：有効）  
-    YouTubeのプレビューを表示します。[KOSHIAN リロード拡張](https://addons.mozilla.org/ja/firefox/addon/koshian-reload-futaba/)（[改](https://github.com/akoya-tomo/koshian_reload_futaba_kai)）無しでふたばのリロードを使用するときは無効にして下さい。（リロードの度にYouTubeのプレビューが再読み込みされるため）  
-  - 「YouTubeのプレビュー横幅」オプション（デフォルト：0 = デフォルトの横幅）  
-    YouTubeのプレビューサイズはデフォルトだと最大でも300px × 150pxです。  
-    このオプションを設定すると、指定した横幅でYouTubeのプレビューを表示することができます。  
+  - 「YouTube のプレビューを表示する」オプション（デフォルト：有効）  
+    YouTube のプレビューを表示します。[KOSHIAN リロード拡張](https://addons.mozilla.org/ja/firefox/addon/koshian-reload-futaba/)（[改](https://github.com/akoya-tomo/koshian_reload_futaba_kai)）無しでふたばのリロードを使用するときは無効にして下さい。（リロードの度に YouTube のプレビューが再読み込みされるため）  
+  - 「YouTube のプレビュー横幅」オプション（デフォルト：0 = デフォルトの横幅）  
+    YouTube のプレビューサイズはデフォルトだと最大でも 300px × 150px です。  
+    このオプションを設定すると、指定した横幅で YouTube のプレビューを表示することができます。  
     （プレビュー最大幅の設定より優先されます）  
   - 「引用された塩のファイル名のリンクを作成する」オプション（デフォルト：無効）  
     無効にすると引用された塩のファイル名はリンク作成しません。  
-    これはリンク作成すると[KOSHIAN 引用をポップアップで表示](https://addons.mozilla.org/ja/firefox/addon/koshian-popup-quote/)（[改](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/)）が引用元ポップアップできなくなるためです。  
+    これはリンク作成すると [KOSHIAN 引用をポップアップで表示](https://addons.mozilla.org/ja/firefox/addon/koshian-popup-quote/)（[改](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/)）が引用元ポップアップできなくなるためです。  
     有効にするとオリジナル版と同様に引用された塩のファイル名もリンク作成します。  
   - 「画像プレビュー上にリンクを作成する」オプション（デフォルト：無効）  
     有効にすると画像プレビュー上にリンクが作成されて、プレビューをクリックで画像が開けるようになります。  
 
 ## インストール
 **GitHub**  
-[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.1/koshian_autolink_futaba_kai-1.3.1-fx.xpi)  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.2/koshian_autolink_futaba_kai-1.3.2-fx.xpi)  
 
-※![\(New\)](images/new.png "New") v1.3.1からアドオンのアクセス許可に「」ッチー(`tsumanne.net`)・FTBucket(`ftbucket.info`)が追加になります。（アドオンを動作させるため）  
-※v1.1.3からアドオンのアクセス許可にふたポの過去ログ\(`kako.futakuro.com`\)が追加になります。（アドオンを動作させるため） 
+※![\(New\)](images/new.png "New") v1.3.1からアドオンのアクセス許可にログサイト\(`tsumanne.net`\)・\(`ftbucket.info`\)が追加になります。  
+  （ログサイトでアドオンを動作させるため）  
+※v1.1.3 からアドオンのアクセス許可にログサイト\(`kako.futakuro.com`\)が追加になります。  
+  （ログサイトでアドオンを動作させるため） 
 
 ※「接続エラーのため、アドオンをダウンロードできませんでした。」と表示されてインストール出来ない時はインストールボタンを右クリックしてxpiファイルをダウンロードし、メニューのツール→アドオン（またはCtrl+Shift+A）で表示されたアドオンマネージャーのページにxpiファイルをドラッグ＆ドロップして下さい。  
 
@@ -38,6 +40,9 @@
 * フレーム表示では動作しません。  
 
 ## 更新履歴
+* v1.3.2 2019-06-24
+  - ログサイトでは塩のリンクはログサイトに保存されているファイルを参照するように修正 (Thanks Voodoo1019)
+  - ログサイトで「引用された塩のファイル名のリンクを作成する」が無効でもリンク作成する不具合を修正
 * v1.3.1 2019-06-17
   - アドオンを実行するサイトにログサイト2件を追加
 * v1.3.0 2019-05-09
@@ -51,7 +56,7 @@
   - YouTubeのプレビュー横幅の設定を追加  
   - gaming.youtube.comのプレビューを表示するように修正  
 * v1.1.3 2018-06-01
-  - アドオンを実行するサイトに[ふたポ](http://futapo.futakuro.com/)の過去ログ\(kako.futakuro.com\)を追加  
+  - アドオンを実行するサイトにログサイトを追加  
 * v1.1.2 2018-05-08
   - あぷ・あぷ小のリンク修正
 * v1.1.1 2018-04-28
