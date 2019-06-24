@@ -38,6 +38,8 @@ let g_youtube_preview = true;
 let youtube_width = 0;
 let sio_quote_link = false;
 let use_preview_link = false;
+let is_tsumanne = location.hostname == "tsumanne.net";
+let is_ftbucket = location.hostname.endsWith("ftbucket.info");
 
 function fixFormPosition() {
     let form = document.getElementById("ftbl");
@@ -167,10 +169,23 @@ function replaceText(node) {
             let elem1 = document.createTextNode(sio_matches[1]);
             let elem2 = document.createElement("a");
             let elem3 = document.createTextNode(sio_matches[3]);
-            elem2.href = `${sio_url_list[i]}${sio_matches[2]}`;
-            if (/^(sz|sq)/.test(sio_matches[2])) {
-                //塩大瓶・中瓶のDLKey付対策でリンクの拡張子を削除
-                elem2.href = `${sio_url_list[i]}${sio_matches[2].split(/\./)[0]}`;
+            let href = null;
+            if (is_tsumanne) {
+                // 「」ッチー
+                href = sio_matches[2];
+                elem2.href = href;
+            } else if (is_ftbucket) {
+                // FTBucket
+                href = `other/${sio_matches[2]}`;
+                elem2.href = href;
+            } else {
+                // ふたば・ふたポ過去ログ
+                href = `${sio_url_list[i]}${sio_matches[2]}`;
+                elem2.href = href;
+                if (/^(sz|sq)/.test(sio_matches[2])) {
+                    //塩大瓶・中瓶のDLKey付対策でリンクの拡張子を削除
+                    elem2.href = `${sio_url_list[i]}${sio_matches[2].split(/\./)[0]}`;
+                }
             }
             elem2.text = sio_matches[2];
             if (g_use_blank) {
@@ -192,7 +207,7 @@ function replaceText(node) {
                     case "bmp":
                         preview = document.createElement("img");
                         anchor = document.createElement("a");
-                        anchor.href = `${sio_url_list[i]}${sio_matches[2]}`;
+                        anchor.href = href;
                         if (g_use_blank) {
                             anchor.target = "_blank";
                         }
@@ -214,7 +229,7 @@ function replaceText(node) {
                 if (preview) {
                     let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : false);
                     let preview_switch = createPreviewSwitch(preview, initial_hide);
-                    preview.src = `${sio_url_list[i]}${sio_matches[2]}`;
+                    preview.src = href;
                     preview.style.maxWidth = `${max_width}px`;
                     preview.style.maxHeight = `${max_height}px`;
                     preview.style.display = initial_hide ? "none" : "block";
