@@ -161,10 +161,9 @@ function replaceText(node) {
     for (let i = 0; i < sio_pattern_list.length; ++i) {
         let sio_matches = node.nodeValue.match(sio_pattern_list[i]);
         if (sio_matches) {
-            if (sio_matches[1]) {
-                let hasQuote = quote_pattern.test(sio_matches[1]);
-                //console.log("res.js : hasQuote = " + hasQuote);
-                if (hasQuote && !sio_quote_link) break;
+            let font = parent.closest("font");
+            if (font && font.color == "#789922" && !sio_quote_link) {
+                break;
             }
             let elem1 = document.createTextNode(sio_matches[1]);
             let elem2 = document.createElement("a");
