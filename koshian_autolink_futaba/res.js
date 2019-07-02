@@ -222,7 +222,7 @@ function replaceText(node) {
                 }
 
                 if (preview) {
-                    let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : false);
+                    let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : (parent.previousSibling ? (parent.previousSibling.nodeValue ? parent.previousSibling.nodeValue[0] == ">" : false) : false));
                     let preview_switch = createPreviewSwitch(preview, initial_hide);
                     preview.src = href;
                     preview.style.maxWidth = `${max_width}px`;
