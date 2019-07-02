@@ -127,7 +127,7 @@ function replaceText(node) {
         if (g_youtube_preview) {
             let youtube_url = getYoutubeUrl(url_matches[2]);
             if (youtube_url) {
-                let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : false);
+                let initial_hide = (g_hide_preview) ? (true) : (parent.previousSibling ? (parent.previousSibling.nodeValue ? parent.previousSibling.nodeValue[0] == ">" : false) : false);
                 let iframe = document.createElement("iframe");
                 let preview_switch = createPreviewSwitch(iframe, initial_hide);
                 iframe.src = youtube_url;
@@ -222,7 +222,7 @@ function replaceText(node) {
                 }
 
                 if (preview) {
-                    let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : false);
+                    let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : (parent.previousSibling ? (parent.previousSibling.nodeValue ? parent.previousSibling.nodeValue[0] == ">" : false) : false));
                     let preview_switch = createPreviewSwitch(preview, initial_hide);
                     preview.src = href;
                     preview.style.maxWidth = `${max_width}px`;
@@ -280,14 +280,17 @@ function main() {
 
         process();
 
-        document.addEventListener("KOSHIAN_reload", (e) => {    // eslint-disable-line no-unused-vars
+        // KOSHIAN リロード監視
+        document.addEventListener("KOSHIAN_reload", () => {
             process(last_process_index);
         });
 
+        // ふたば リロード監視
         let contdisp = document.getElementById("contdisp");
         if (contdisp) {
-            check2chanReload(contdisp);
+            checkFutabaReload(contdisp);
         }
+
     } else if (g_replace_all_page) {
         for (let i = 0, targets = document.querySelectorAll("blockquote,blockquote>font,blockquote>a,blockquote>font>a"); i < targets.length; ++i) {
             for (let node = targets[i].firstChild; node; node = node.nextSibling) {
@@ -300,24 +303,23 @@ function main() {
         fixFormPosition();
     }
 
-    function check2chanReload(target) {
+    function checkFutabaReload(target) {
         let status = "";
         let reloading = false;
         let config = { childList: true };
-        let observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {  // eslint-disable-line no-unused-vars
-                if (target.textContent == status) return;
-                status = target.textContent;
-                if (status == "・・・") {
-                    reloading = true;
-                } else
-                if (reloading && status.endsWith("頃消えます")) {
-                    process(last_process_index);
-                    reloading = false;
-                } else {
-                    reloading = false;
-                }
-            });
+        let observer = new MutationObserver(function() {
+            if (target.textContent == status) {
+                return;
+            }
+            status = target.textContent;
+            if (status == "・・・") {
+                reloading = true;
+            } else if (reloading && status.endsWith("頃消えます")) {
+                process(last_process_index);
+                reloading = false;
+            } else {
+                reloading = false;
+            }
         });
         observer.observe(target, config);
     }

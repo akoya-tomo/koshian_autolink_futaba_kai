@@ -24,7 +24,7 @@
 
 ## インストール
 **GitHub**  
-[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.2/koshian_autolink_futaba_kai-1.3.2-fx.xpi)  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.3/koshian_autolink_futaba_kai-1.3.3-fx.xpi)  
 
 ※![\(New\)](images/new.png "New") v1.3.1からアドオンのアクセス許可にログサイト\(`tsumanne.net`\)・\(`ftbucket.info`\)が追加になります。  
   （ログサイトでアドオンを動作させるため）  
@@ -40,6 +40,10 @@
 * フレーム表示では動作しません。  
 
 ## 更新履歴
+* v1.3.3 2019-07-03
+  - 引用されたYouTubeのリンクのプレビューがデフォルトで閉じてない不具合を修正
+  - ログサイトで引用された塩のリンクのプレビューがデフォルトで閉じてない不具合を修正
+  - リロードの監視を修正
 * v1.3.2 2019-06-24
   - ログサイトでは塩のリンクはログサイトに保存されているファイルを参照するように修正 (Thanks Voodoo1019)
   - ログサイトで「引用された塩のファイル名のリンクを作成する」が無効でもリンク作成する不具合を修正
