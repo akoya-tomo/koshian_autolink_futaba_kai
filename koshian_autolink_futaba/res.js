@@ -127,7 +127,7 @@ function replaceText(node) {
         if (g_youtube_preview) {
             let youtube_url = getYoutubeUrl(url_matches[2]);
             if (youtube_url) {
-                let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : false);
+                let initial_hide = (g_hide_preview) ? (true) : (parent.previousSibling ? (parent.previousSibling.nodeValue ? parent.previousSibling.nodeValue[0] == ">" : false) : false);
                 let iframe = document.createElement("iframe");
                 let preview_switch = createPreviewSwitch(iframe, initial_hide);
                 iframe.src = youtube_url;
