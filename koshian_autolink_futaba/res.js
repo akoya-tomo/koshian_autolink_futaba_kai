@@ -228,6 +228,7 @@ function replaceText(node) {
                 }
 
                 if (preview) {
+                    // 「プレビューをデフォルトで閉じる」が有効 or nodeのの先頭文字が">" or parentの直前のnodeの先頭文字が">" ならプレビューを閉じる
                     let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : (parent.previousSibling ? (parent.previousSibling.nodeValue ? parent.previousSibling.nodeValue[0] == ">" : false) : false));
                     let preview_switch = createPreviewSwitch(preview, initial_hide);
                     preview.src = href;
