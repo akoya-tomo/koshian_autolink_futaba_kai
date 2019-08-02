@@ -17,16 +17,16 @@
     （プレビュー最大幅の設定より優先されます）  
   - 「引用された塩のファイル名のリンクを作成する」オプション（デフォルト：無効）  
     無効にすると引用された塩のファイル名はリンク作成しません。  
-    これはリンク作成すると [KOSHIAN 引用をポップアップで表示](https://addons.mozilla.org/ja/firefox/addon/koshian-popup-quote/)（[改](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/)）が引用元ポップアップできなくなるためです。  
+    これはリンク作成すると [KOSHIAN 引用をポップアップで表示](https://addons.mozilla.org/ja/firefox/addon/koshian-popup-quote/)が引用元ポップアップできなくなるためです。[KOSHIAN 引用をポップアップで表示 改](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/)はリンク作成しても引用元ポップアップできます。  
     有効にするとオリジナル版と同様に引用された塩のファイル名もリンク作成します。  
   - 「画像プレビュー上にリンクを作成する」オプション（デフォルト：無効）  
     有効にすると画像プレビュー上にリンクが作成されて、プレビューをクリックで画像が開けるようになります。  
 
 ## インストール
 **GitHub**  
-[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.3/koshian_autolink_futaba_kai-1.3.3-fx.xpi)  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.4/koshian_autolink_futaba_kai-1.3.4-fx.xpi)  
 
-※![\(New\)](images/new.png "New") v1.3.1からアドオンのアクセス許可にログサイト\(`tsumanne.net`\)・\(`ftbucket.info`\)が追加になります。  
+※v1.3.1からアドオンのアクセス許可にログサイト\(`tsumanne.net`\)・\(`ftbucket.info`\)が追加になります。  
   （ログサイトでアドオンを動作させるため）  
 ※v1.1.3 からアドオンのアクセス許可にログサイト\(`kako.futakuro.com`\)が追加になります。  
   （ログサイトでアドオンを動作させるため） 
@@ -40,6 +40,11 @@
 * フレーム表示では動作しません。  
 
 ## 更新履歴
+* v1.3.4 2019-08-02
+  - YouTubeのプレビューの横にクッションページのリンクが残ることがある不具合を修正
+  - ログサイトに塩のファイルが保存されていないときは塩にリンクするように修正
+  - FTBucket内のYouTubeプレビューの挿入位置を修正
+  - 塩のリンクアドレスを一部修正
 * v1.3.3 2019-07-03
   - 引用されたYouTubeのリンクのプレビューがデフォルトで閉じてない不具合を修正
   - ログサイトで引用された塩のリンクのプレビューがデフォルトで閉じてない不具合を修正

@@ -14,7 +14,7 @@ const sio_pattern_list = [
 const sio_url_list = [
     `http://dec.2chan.net/up/src/`,
     `http://dec.2chan.net/up2/src/`,
-    `http://www.siokarabin.com/futabafiles/big/src/`,
+    `http://www.siokarabin.com/futabafiles/big/src/auth.redirect.php?`,
     `http://www.nijibox6.com/futabafiles/mid/src/`,
     `http://www.nijibox5.com/futabafiles/tubu/src/`,
     `http://www.nijibox6.com/futabafiles/001/src/`,
@@ -112,6 +112,13 @@ function replaceText(node) {
 
     let url_matches = node.nodeValue.match(url_pattern);
     if (url_matches) {
+        let has_link = false;
+        if (parent.nodeName == "A" && parent.textContent == url_matches[2]) {
+            // 既にリンク化されているときは置き換える（リダイレクト回避）
+            parent = parent.parentNode;
+            node = node.parentNode;
+            has_link = true;
+        }
         let elem1 = document.createTextNode(url_matches[1]);
         let elem2 = document.createElement("a");
         let elem3 = document.createTextNode(url_matches[3]);
@@ -127,7 +134,8 @@ function replaceText(node) {
         if (g_youtube_preview) {
             let youtube_url = getYoutubeUrl(url_matches[2]);
             if (youtube_url) {
-                let initial_hide = (g_hide_preview) ? (true) : (parent.previousSibling ? (parent.previousSibling.nodeValue ? parent.previousSibling.nodeValue[0] == ">" : false) : false);
+                // 「プレビューをデフォルトで閉じる」が有効 or elem1の直前のnodeの先頭文字が">"（新しいふたばの仕様）or nodeの先頭文字が">"（古いふたばの仕様）ならプレビューを閉じる
+                let initial_hide = (g_hide_preview) ? (true) : (has_link ? (elem1.previousSibling ? (elem1.previousSibling.nodeValue ? elem1.previousSibling.nodeValue[0] == ">" : false) : false) : node.nodeValue[0] == ">");
                 let iframe = document.createElement("iframe");
                 let preview_switch = createPreviewSwitch(iframe, initial_hide);
                 iframe.src = youtube_url;
@@ -144,7 +152,12 @@ function replaceText(node) {
                     iframe.style.height = `${youtube_height}px`;
                 }
                 parent.insertBefore(preview_switch, elem3);
-                parent.insertBefore(iframe, node);
+                if (is_ftbucket && url_matches[3] == "	[") {
+                    // FTBucketは[link]の前にプレビューを挿入する
+                    parent.insertBefore(iframe, elem3);
+                } else {
+                    parent.insertBefore(iframe, node);
+                }
                 parent.removeChild(node);
                 return iframe;
             }
@@ -164,23 +177,16 @@ function replaceText(node) {
             let elem1 = document.createTextNode(sio_matches[1]);
             let elem2 = document.createElement("a");
             let elem3 = document.createTextNode(sio_matches[3]);
-            let href = null;
-            if (is_tsumanne) {
-                // 「」ッチー
-                href = sio_matches[2];
+            let href = `${sio_url_list[i]}${sio_matches[2]}`;
+            if ((is_tsumanne || is_ftbucket) && parent.href) {
+                // 「」ッチー・FTBucketに塩のファイル有り
+                href = parent.href;
                 elem2.href = href;
-            } else if (is_ftbucket) {
-                // FTBucket
-                href = `other/${sio_matches[2]}`;
-                elem2.href = href;
+            } else if (/^sq/.test(sio_matches[2])) {
+                //塩中瓶のDLKey付対策でリンクの拡張子を削除
+                elem2.href = `${sio_url_list[i]}${sio_matches[2].split(/\./)[0]}`;
             } else {
-                // ふたば・ふたポ過去ログ
-                href = `${sio_url_list[i]}${sio_matches[2]}`;
                 elem2.href = href;
-                if (/^(sz|sq)/.test(sio_matches[2])) {
-                    //塩大瓶・中瓶のDLKey付対策でリンクの拡張子を削除
-                    elem2.href = `${sio_url_list[i]}${sio_matches[2].split(/\./)[0]}`;
-                }
             }
             elem2.text = sio_matches[2];
             if (g_use_blank) {
@@ -222,6 +228,7 @@ function replaceText(node) {
                 }
 
                 if (preview) {
+                    // 「プレビューをデフォルトで閉じる」が有効 or nodeのの先頭文字が">" or parentの直前のnodeの先頭文字が">" ならプレビューを閉じる
                     let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : (parent.previousSibling ? (parent.previousSibling.nodeValue ? parent.previousSibling.nodeValue[0] == ">" : false) : false));
                     let preview_switch = createPreviewSwitch(preview, initial_hide);
                     preview.src = href;

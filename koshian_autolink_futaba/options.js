@@ -1,3 +1,5 @@
+/* eslint indent: ["warn", 2] */
+
 function safeGetValue(value, default_value) {
   if (value === undefined) {
     return default_value;
@@ -40,7 +42,7 @@ function setCurrentChoice(result) {
   document.querySelector("#use_preview_link").checked = safeGetValue(result.use_preview_link, false);
 }
 
-function onError(error) {
+function onError(error) { // eslint-disable-line no-unused-vars
   //  console.log(`Error: ${error}`);
 }
 
