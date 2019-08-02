@@ -172,23 +172,16 @@ function replaceText(node) {
             let elem1 = document.createTextNode(sio_matches[1]);
             let elem2 = document.createElement("a");
             let elem3 = document.createTextNode(sio_matches[3]);
-            let href = null;
-            if (is_tsumanne) {
-                // 「」ッチー
-                href = sio_matches[2];
+            let href = `${sio_url_list[i]}${sio_matches[2]}`;
+            if ((is_tsumanne || is_ftbucket) && parent.href) {
+                // 「」ッチー・FTBucketに塩のファイル有り
+                href = parent.href;
                 elem2.href = href;
-            } else if (is_ftbucket) {
-                // FTBucket
-                href = `other/${sio_matches[2]}`;
-                elem2.href = href;
+            } else if (/^(sz|sq)/.test(sio_matches[2])) {
+                //塩大瓶・中瓶のDLKey付対策でリンクの拡張子を削除
+                elem2.href = `${sio_url_list[i]}${sio_matches[2].split(/\./)[0]}`;
             } else {
-                // ふたば・ふたポ過去ログ
-                href = `${sio_url_list[i]}${sio_matches[2]}`;
                 elem2.href = href;
-                if (/^(sz|sq)/.test(sio_matches[2])) {
-                    //塩大瓶・中瓶のDLKey付対策でリンクの拡張子を削除
-                    elem2.href = `${sio_url_list[i]}${sio_matches[2].split(/\./)[0]}`;
-                }
             }
             elem2.text = sio_matches[2];
             if (g_use_blank) {
