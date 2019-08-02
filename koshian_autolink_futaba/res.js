@@ -152,7 +152,12 @@ function replaceText(node) {
                     iframe.style.height = `${youtube_height}px`;
                 }
                 parent.insertBefore(preview_switch, elem3);
-                parent.insertBefore(iframe, node);
+                if (is_ftbucket && url_matches[3] == "	[") {
+                    // FTBucketは[link]の前にプレビューを挿入する
+                    parent.insertBefore(iframe, elem3);
+                } else {
+                    parent.insertBefore(iframe, node);
+                }
                 parent.removeChild(node);
                 return iframe;
             }
