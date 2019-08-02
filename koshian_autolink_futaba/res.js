@@ -112,6 +112,13 @@ function replaceText(node) {
 
     let url_matches = node.nodeValue.match(url_pattern);
     if (url_matches) {
+        let has_link = false;
+        if (parent.nodeName == "A" && parent.textContent == url_matches[2]) {
+            // 既にリンク化されているときは置き換える（リダイレクト回避）
+            parent = parent.parentNode;
+            node = node.parentNode;
+            has_link = true;
+        }
         let elem1 = document.createTextNode(url_matches[1]);
         let elem2 = document.createElement("a");
         let elem3 = document.createTextNode(url_matches[3]);
@@ -127,7 +134,8 @@ function replaceText(node) {
         if (g_youtube_preview) {
             let youtube_url = getYoutubeUrl(url_matches[2]);
             if (youtube_url) {
-                let initial_hide = (g_hide_preview) ? (true) : (parent.previousSibling ? (parent.previousSibling.nodeValue ? parent.previousSibling.nodeValue[0] == ">" : false) : false);
+                // 「プレビューをデフォルトで閉じる」が有効 or elem1の直前のnodeの先頭文字が">"（新しいふたばの仕様）or nodeの先頭文字が">"（古いふたばの仕様）ならプレビューを閉じる
+                let initial_hide = (g_hide_preview) ? (true) : (has_link ? (elem1.previousSibling ? (elem1.previousSibling.nodeValue ? elem1.previousSibling.nodeValue[0] == ">" : false) : false) : node.nodeValue[0] == ">");
                 let iframe = document.createElement("iframe");
                 let preview_switch = createPreviewSwitch(iframe, initial_hide);
                 iframe.src = youtube_url;
