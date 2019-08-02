@@ -14,7 +14,7 @@ const sio_pattern_list = [
 const sio_url_list = [
     `http://dec.2chan.net/up/src/`,
     `http://dec.2chan.net/up2/src/`,
-    `http://www.siokarabin.com/futabafiles/big/src/`,
+    `http://www.siokarabin.com/futabafiles/big/src/auth.redirect.php?`,
     `http://www.nijibox6.com/futabafiles/mid/src/`,
     `http://www.nijibox5.com/futabafiles/tubu/src/`,
     `http://www.nijibox6.com/futabafiles/001/src/`,
@@ -182,8 +182,8 @@ function replaceText(node) {
                 // 「」ッチー・FTBucketに塩のファイル有り
                 href = parent.href;
                 elem2.href = href;
-            } else if (/^(sz|sq)/.test(sio_matches[2])) {
-                //塩大瓶・中瓶のDLKey付対策でリンクの拡張子を削除
+            } else if (/^sq/.test(sio_matches[2])) {
+                //塩中瓶のDLKey付対策でリンクの拡張子を削除
                 elem2.href = `${sio_url_list[i]}${sio_matches[2].split(/\./)[0]}`;
             } else {
                 elem2.href = href;
