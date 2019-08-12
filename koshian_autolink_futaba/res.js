@@ -206,6 +206,7 @@ function replaceText(node) {
                     case "png":
                     case "gif":
                     case "bmp":
+                    case "webp":
                         preview = document.createElement("img");
                         anchor = document.createElement("a");
                         anchor.href = href;

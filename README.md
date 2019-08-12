@@ -24,7 +24,7 @@
 
 ## インストール
 **GitHub**  
-[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.4/koshian_autolink_futaba_kai-1.3.4-fx.xpi)  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.5/koshian_autolink_futaba_kai-1.3.5-fx.xpi)  
 
 ※v1.3.1からアドオンのアクセス許可にログサイト\(`tsumanne.net`\)・\(`ftbucket.info`\)が追加になります。  
   （ログサイトでアドオンを動作させるため）  
@@ -40,6 +40,8 @@
 * フレーム表示では動作しません。  
 
 ## 更新履歴
+* v1.3.5 2019-08-12
+  - WebPのプレビューに対応
 * v1.3.4 2019-08-02
   - YouTubeのプレビューの横にクッションページのリンクが残ることがある不具合を修正
   - ログサイトに塩のファイルが保存されていないときは塩にリンクするように修正
