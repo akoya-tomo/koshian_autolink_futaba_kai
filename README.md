@@ -23,8 +23,9 @@
     有効にすると画像プレビュー上にリンクが作成されて、プレビューをクリックで画像が開けるようになります。  
 
 ## インストール
+### **● 最新バージョン**(v1.3.6)
 **GitHub**  
-[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.5/koshian_autolink_futaba_kai-1.3.5-fx.xpi)  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.6/koshian_autolink_futaba_kai-1.3.6-fx.xpi)  
 
 ※v1.3.1からアドオンのアクセス許可にログサイト\(`tsumanne.net`\)・\(`ftbucket.info`\)が追加になります。  
   （ログサイトでアドオンを動作させるため）  
@@ -33,6 +34,11 @@
 
 ※「接続エラーのため、アドオンをダウンロードできませんでした。」と表示されてインストール出来ない時はインストールボタンを右クリックしてxpiファイルをダウンロードし、メニューのツール→アドオン（またはCtrl+Shift+A）で表示されたアドオンマネージャーのページにxpiファイルをドラッグ＆ドロップして下さい。  
 
+### **● 一つ前のバージョン**(v1.3.5)
+  v1.3.6に更新して不具合が発生したときはこちらをインストールして自動更新を無効にしてください。  
+**GitHub**  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.5/koshian_autolink_futaba_kai-1.3.5-fx.xpi)  
+
 ## 注意事項
 * 本アドオンを有効にしたときはオリジナル版を無効にするか削除して下さい。  
 * オリジナル版とは別アドオンなので設定は初期値に戻ります。  
@@ -40,6 +46,8 @@
 * フレーム表示では動作しません。  
 
 ## 更新履歴
+* v1.3.6 2019-10-31
+  - リンクの範囲が画像プレビューの右側にはみ出す不具合を修正
 * v1.3.5 2019-08-12
   - WebPのプレビューに対応
 * v1.3.4 2019-08-02

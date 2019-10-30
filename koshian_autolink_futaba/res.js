@@ -90,6 +90,16 @@ function createPreviewSwitch(elem, hide) {
         if (elem.style.display == "none") {
             elem.style.display = "block";
             switch_button.text = "[隠す]";
+            if (elem.className == "KOSHIAN_PreviewContainer" && !elem.style.width) {
+                let img = elem.getElementsByTagName("img")[0];
+                if (img && img.complete) {
+                    let rect = img.getBoundingClientRect();
+                    if (rect.width && rect.height) {
+                        elem.style.width = `${rect.width}px`;
+                        elem.style.height = `${rect.height}px`;
+                    }
+                }
+            }
         } else {
             if (elem.tagName == "AUDIO" || elem.tagName == "VIDEO") {
                 elem.pause();
@@ -182,6 +192,7 @@ function replaceText(node) {
                 // 「」ッチー・FTBucketに塩のファイル有り
                 href = parent.href;
                 elem2.href = href;
+                parent.removeAttribute("href");
             } else if (/^sq/.test(sio_matches[2])) {
                 //塩中瓶のDLKey付対策でリンクの拡張子を削除
                 elem2.href = `${sio_url_list[i]}${sio_matches[2].split(/\./)[0]}`;
@@ -209,6 +220,7 @@ function replaceText(node) {
                     case "webp":
                         preview = document.createElement("img");
                         anchor = document.createElement("a");
+                        anchor.className = "KOSHIAN_PreviewContainer";
                         anchor.href = href;
                         if (g_use_blank) {
                             anchor.target = "_blank";
@@ -231,19 +243,32 @@ function replaceText(node) {
                 if (preview) {
                     // 「プレビューをデフォルトで閉じる」が有効 or nodeのの先頭文字が">" or parentの直前のnodeの先頭文字が">" ならプレビューを閉じる
                     let initial_hide = (g_hide_preview) ? (true) : (node.nodeValue[0] == ">" ? true : (parent.previousSibling ? (parent.previousSibling.nodeValue ? parent.previousSibling.nodeValue[0] == ">" : false) : false));
-                    let preview_switch = createPreviewSwitch(preview, initial_hide);
-                    preview.src = href;
+                    let preview_switch = createPreviewSwitch(anchor && use_preview_link ? anchor : preview, initial_hide);
                     preview.style.maxWidth = `${max_width}px`;
                     preview.style.maxHeight = `${max_height}px`;
-                    preview.style.display = initial_hide ? "none" : "block";
                     parent.insertBefore(preview_switch, elem3);
                     if (anchor && use_preview_link) {
+                        preview.style.display = "block";
+                        anchor.style.display = initial_hide ? "none" : "block";
                         anchor.appendChild(preview);
-                        preview = anchor;
+                        preview.onload = () => {
+                            if (anchor.style.display == "block") {
+                                let rect = preview.getBoundingClientRect();
+                                anchor.style.width = `${rect.width}px`;
+                                anchor.style.height = `${rect.height}px`;
+                            }
+                        }
+                        preview.src = href;
+                        parent.insertBefore(anchor, node);
+                        parent.removeChild(node);
+                        return anchor;
+                    } else {
+                        preview.style.display = initial_hide ? "none" : "block";
+                        preview.src = href;
+                        parent.insertBefore(preview, node);
+                        parent.removeChild(node);
+                        return preview;
                     }
-                    parent.insertBefore(preview, node);
-                    parent.removeChild(node);
-                    return preview;
                 }
             }
 
