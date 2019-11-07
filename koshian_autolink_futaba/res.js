@@ -88,7 +88,7 @@ function createPreviewSwitch(elem, hide) {
     switch_button.appendChild(elem);
     switch_button.onclick = (e) => {    // eslint-disable-line no-unused-vars
         if (elem.style.display == "none") {
-            elem.style.display = "block";
+            elem.style.display = isResponseComment(elem) ? "block" : "";
             switch_button.text = "[隠す]";
             if (elem.className == "KOSHIAN_PreviewContainer" && !elem.style.width) {
                 let img = elem.getElementsByTagName("img")[0];
@@ -249,7 +249,7 @@ function replaceText(node) {
                     parent.insertBefore(preview_switch, elem3);
                     if (anchor && use_preview_link) {
                         preview.style.display = "block";
-                        anchor.style.display = initial_hide ? "none" : "block";
+                        anchor.style.display = initial_hide ? "none" : isResponseComment(parent) ? "block" : "";
                         anchor.appendChild(preview);
                         preview.onload = () => {
                             if (anchor.style.display == "block") {
@@ -278,6 +278,10 @@ function replaceText(node) {
     }
 
     return node;
+}
+
+function isResponseComment(elem) {
+    return elem.closest(".rtd");
 }
 
 let last_process_index = 0;
