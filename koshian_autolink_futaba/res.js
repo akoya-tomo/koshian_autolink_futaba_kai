@@ -251,13 +251,16 @@ function replaceText(node) {
                         preview.style.display = "block";
                         anchor.style.display = initial_hide ? "none" : isResponseComment(parent) ? "block" : "";
                         anchor.appendChild(preview);
+                        let blockquote = parent.closest("blockquote");
                         preview.onload = () => {
-                            if (anchor.style.display == "block") {
+                            if (anchor.style.display != "none" && blockquote && blockquote.style.display != "none") {
                                 let rect = preview.getBoundingClientRect();
-                                anchor.style.width = `${rect.width}px`;
-                                anchor.style.height = `${rect.height}px`;
+                                if (rect.width && rect.height) {
+                                    anchor.style.width = `${rect.width}px`;
+                                    anchor.style.height = `${rect.height}px`;
+                                }
                             }
-                        }
+                        };
                         preview.src = href;
                         parent.insertBefore(anchor, node);
                         parent.removeChild(node);
