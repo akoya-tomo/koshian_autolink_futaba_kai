@@ -1,5 +1,5 @@
 ## <sub><img src="koshian_autolink_futaba/icons/icon-48.png"></sub> KOSHIAN 自動リンク生成 改
-この Firefoxアドオンはふたば☆ちゃんねるでURLや塩のファイル名からリンクを作成する[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)氏の [KOSHIAN 自動リンク生成](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/) の非公式改変版です。  
+この Firefoxアドオンはふたば☆ちゃんねるでURLやあぷ・あぷ小のファイル名からリンクを作成する[Pachira](https://addons.mozilla.org/ja/firefox/user/anonymous-a0bba9187b568f98732d22d51c5955a6/)氏の [KOSHIAN 自動リンク生成](https://addons.mozilla.org/ja/firefox/addon/koshian-autolink-futaba/) の非公式改変版です。  
 「YouTube のプレビュー横幅」などのオプションをオリジナル版に追加しています。  
 
 ※このアドオンは WebExtensionアドオン対応の Firefox専用となります。  
@@ -7,7 +7,7 @@
 
 ## 機能
 * オリジナルの機能（KOSHIAN 自動リンク生成）
-  - ふたば☆ちゃんねるのレス送信モードでURLや塩のファイル名からリンクを作成します。
+  - ふたば☆ちゃんねるのレス送信モードでURLやあぷ・あぷ小のファイル名からリンクを作成します。
 * 追加された機能（KOSHIAN 自動リンク生成 改）
   - 「YouTube のプレビューを表示する」オプション（デフォルト：有効）  
     YouTube のプレビューを表示します。~~[KOSHIAN リロード拡張](https://addons.mozilla.org/ja/firefox/addon/koshian-reload-futaba/)（[改](https://github.com/akoya-tomo/koshian_reload_futaba_kai)）無しでふたばのリロードを使用するときは無効にして下さい。（リロードの度に YouTube のプレビューが再読み込みされるため）~~  
@@ -16,16 +16,16 @@
     YouTube のプレビューサイズはデフォルトだと最大でも 300px × 150px です。  
     このオプションを設定すると、指定した横幅で YouTube のプレビューを表示することができます。  
     （プレビュー最大幅の設定より優先されます）  
-  - 「引用された塩のファイル名のリンクを作成する」オプション（デフォルト：無効）  
-    無効にすると引用された塩のファイル名はリンク作成しません。  
+  - 「引用されたあぷ・あぷ小のファイル名のリンクを作成する」オプション（デフォルト：無効）  
+    無効にすると引用されたあぷ・あぷ小のファイル名はリンク作成しません。  
     これはリンク作成すると [KOSHIAN 引用をポップアップで表示](https://addons.mozilla.org/ja/firefox/addon/koshian-popup-quote/)が引用元ポップアップできなくなるためです。[KOSHIAN 引用をポップアップで表示 改](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/)はリンク作成しても引用元ポップアップできます。  
-    有効にするとオリジナル版と同様に引用された塩のファイル名もリンク作成します。  
+    有効にするとオリジナル版と同様に引用されたあぷ・あぷ小のファイル名もリンク作成します。  
   - 「画像プレビュー上にリンクを作成する」オプション（デフォルト：無効）  
     有効にすると画像プレビュー上にリンクが作成されて、プレビューをクリックで画像が開けるようになります。  
 
 ## インストール
 **GitHub**  
-[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.8/koshian_autolink_futaba_kai-1.3.8-fx.xpi)  
+[![インストールボタン](images/install_button.png "クリックでアドオンをインストール")](https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.4.0/koshian_autolink_futaba_kai-1.4.0-fx.xpi)  
 
 ※アドオンのアクセス許可にログサイトが追加になります。（ログサイトでアドオンを動作させるため）  
 
@@ -41,6 +41,10 @@
 * スレ本文内の画像プレビューのリンク範囲が右側にはみ出す。  
 
 ## 更新履歴
+* v1.4.0 2022-01-13
+  - 特定のログサイト以外の塩の自動リンク生成を無効化
+  - プレビュー画像のlazy loadingを有効化
+  - 特定のログサイトでの動作を修正
 * v1.3.8 2020-10-04
   - オプション画面の説明表示を修正
 * v1.3.7 2019-11-07
