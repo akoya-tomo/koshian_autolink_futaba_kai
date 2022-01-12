@@ -14,12 +14,13 @@ const sio_pattern_list = [
 const sio_url_list = [
     `http://dec.2chan.net/up/src/`,
     `http://dec.2chan.net/up2/src/`,
-    `http://www.siokarabin.com/futabafiles/big/src/auth.redirect.php?`,
-    `http://www.nijibox6.com/futabafiles/mid/src/`,
-    `http://www.nijibox5.com/futabafiles/tubu/src/`,
-    `http://www.nijibox6.com/futabafiles/001/src/`,
-    `http://www.nijibox5.com/futabafiles/kobin/src/`,
-    `http://www.nijibox2.com/futabafiles/003/src/`,
+    // 塩無効化
+    ``,    //`http://www.siokarabin.com/futabafiles/big/src/auth.redirect.php?`,
+    ``,    //`http://www.nijibox6.com/futabafiles/mid/src/`,
+    ``,    //`http://www.nijibox5.com/futabafiles/tubu/src/`,
+    ``,    //`http://www.nijibox6.com/futabafiles/001/src/`,
+    ``,    //`http://www.nijibox5.com/futabafiles/kobin/src/`,
+    ``,    //`http://www.nijibox2.com/futabafiles/003/src/`,
 ];
 
 let g_replace_all_page = true;
@@ -180,6 +181,10 @@ function replaceText(node) {
     for (let i = 0; i < sio_pattern_list.length; ++i) {
         let sio_matches = node.nodeValue.match(sio_pattern_list[i]);
         if (sio_matches) {
+            if (!is_tsumanne && !sio_url_list[i]) {
+                // 「」ッチー以外での塩の自動リンクを生成しない
+                break;
+            }
             let font = parent.closest("font");
             if (font && font.color == "#789922" && !sio_quote_link) {
                 break;
@@ -189,15 +194,20 @@ function replaceText(node) {
             let elem3 = document.createTextNode(sio_matches[3]);
             let href = `${sio_url_list[i]}${sio_matches[2]}`;
             if ((is_tsumanne || is_ftbucket) && parent.href) {
-                // 「」ッチー・FTBucketに塩のファイル有り
+                // 「」ッチー・FTBucketにあぷ・あぷ小・塩のファイル有り
                 href = parent.href;
                 elem2.href = href;
                 parent.removeAttribute("href");
+            /* 塩無効化
             } else if (/^sq/.test(sio_matches[2])) {
-                //塩中瓶のDLKey付対策でリンクの拡張子を削除
+                // 塩中瓶のDLKey付対策でリンクの拡張子を削除
                 elem2.href = `${sio_url_list[i]}${sio_matches[2].split(/\./)[0]}`;
-            } else {
+            */
+            } else if (sio_url_list[i]) {
                 elem2.href = href;
+            } else {
+                // 塩の自動リンクを生成しない
+                break;
             }
             elem2.text = sio_matches[2];
             if (g_use_blank) {
