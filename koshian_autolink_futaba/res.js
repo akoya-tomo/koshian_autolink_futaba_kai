@@ -229,6 +229,7 @@ function replaceText(node) {
                     case "bmp":
                     case "webp":
                         preview = document.createElement("img");
+                        preview.loading = "lazy";
                         anchor = document.createElement("a");
                         anchor.className = "KOSHIAN_PreviewContainer";
                         anchor.href = href;
