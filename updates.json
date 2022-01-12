@@ -2,9 +2,9 @@
   "addons": {
     "{9519A0BA-E3D3-11E7-87D8-F1731843E317}": {
       "updates": [
-        { "version": "1.3.8",
-          "update_link": "https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.8/koshian_autolink_futaba_kai-1.3.8-fx.xpi",
-          "update_info_url": "https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.3.8/update_info.html"
+        { "version": "1.4.0",
+          "update_link": "https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.4.0/koshian_autolink_futaba_kai-1.4.0-fx.xpi",
+          "update_info_url": "https://github.com/akoya-tomo/koshian_autolink_futaba_kai/releases/download/v1.4.0/update_info.html"
         }
       ]
     }
