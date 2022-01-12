@@ -178,6 +178,11 @@ function replaceText(node) {
         return elem3;
     }
 
+    if (is_ftbucket && g_hide_preview) {
+        // FTBucketで「プレビューをデフォルトで閉じる」が有効ならFTBucket側にプレビュー処理をまかせる
+        return node;
+    }
+
     for (let i = 0; i < sio_pattern_list.length; ++i) {
         let sio_matches = node.nodeValue.match(sio_pattern_list[i]);
         if (sio_matches) {
